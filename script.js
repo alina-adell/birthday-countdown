@@ -91,4 +91,14 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(createHeart, i * 200);
         }
     });
+
+    // Flip по клику на карточку
+    document.querySelectorAll('.flip-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.stopPropagation();
+            card.classList.toggle('flipped');
+            // Автоматически возвращать обратно через 3 секунды
+            setTimeout(() => card.classList.remove('flipped'), 3000);
+        });
+    });
 });
