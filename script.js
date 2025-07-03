@@ -1,6 +1,15 @@
 // Установите здесь дату вашего события в московском времени (UTC+3)
 const targetDate = new Date('2025-07-11T00:00:01+03:00'); // 11 июля 2025 года - 00:00:01 по московскому времени
 
+function getWordForm(number, forms) {
+    number = Math.abs(number) % 100;
+    const n1 = number % 10;
+    if (number > 10 && number < 20) return forms[2];
+    if (n1 > 1 && n1 < 5) return forms[1];
+    if (n1 == 1) return forms[0];
+    return forms[2];
+}
+
 function updateCountdown() {
     const now = new Date();
     const difference = targetDate - now;
@@ -20,6 +29,11 @@ function updateCountdown() {
     document.getElementById('hours').textContent = String(hours).padStart(2, '0');
     document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
     document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+    document.querySelector('#days + .time-label').textContent = getWordForm(days, ['День', 'Дня', 'Дней']);
+    document.querySelector('#hours + .time-label').textContent = getWordForm(hours, ['Час', 'Часа', 'Часов']);
+    document.querySelector('#minutes + .time-label').textContent = getWordForm(minutes, ['Минута', 'Минуты', 'Минут']);
+    document.querySelector('#seconds + .time-label').textContent = getWordForm(seconds, ['Секунда', 'Секунды', 'Секунд']);
 }
 
 function showCelebration() {
