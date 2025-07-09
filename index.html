@@ -74,15 +74,42 @@
         
         <div class="hearts" id="hearts"></div>
     </div>
-    
-    <div class="celebration" id="celebration">
-        <div class="celebration-text">🎉 ПОЗДРАВЛЯЮ! 🎉</div>
-        <div class="celebration-message">
-            С Днём Рождения, Мой Самый Дорогой! 🎉<br><br>
-            Пусть этот год принесет тебе столько же счастья, сколько ты даришь мне каждый день!<br><br>
-            Очень скучаю, но знаю, что скоро будем вместе!<br><br>
-            Крепко-крепко целую, твоя Алиська! 💕💕
+    <div id="birthday-message" class="birthday-message" style="display: none;">
+        <div class="heart-title">¡Feliz cumpleaños, mi amor!</div>
+        <div class="heart-svg-wrapper" style="margin: 18px auto 18px auto; max-width: 420px;">
+            <svg viewBox="0 0 13.066 13.066" class="heart-svg heart-beat">
+                <defs>
+                    <radialGradient id="heartGradient" cx="30%" cy="70%" r="90%">
+                        <stop offset="0%" stop-color="#ffe6f2"/>
+                        <stop offset="60%" stop-color="#ffb07c"/>
+                        <stop offset="100%" stop-color="#c77cff"/>
+                    </radialGradient>
+                </defs>
+                <path d="M6.555,12.558c-0.098,0-0.195-0.034-0.273-0.103c-0.233-0.2-5.718-4.954-6.199-7.885      C-0.133,3.243,0.071,2.201,0.69,1.474C1.22,0.85,2.034,0.507,2.982,0.507c0.082,0,0.165,0.002,0.247,0.008      c0.058-0.003,0.115-0.004,0.172-0.004c1.048,0,2.343,0.461,3.109,2.421c0.43-1.196,1.311-2.417,3.328-2.417      c1.135,0,2.023,0.342,2.571,0.987c0.597,0.701,0.787,1.733,0.569,3.068c-0.479,2.929-5.918,7.684-6.149,7.884      C6.751,12.524,6.653,12.558,6.555,12.558z"
+                fill="url(#heartGradient)"/>
+            </svg>
         </div>
+        <div class="heart-text heart-text-large" style="margin-bottom: 18px; margin-top: 18px;">
+            <div class="heart-text-inner">
+                Пусть этот год принесет тебе столько же счастья,<br>
+                сколько ты даришь мне каждый день!<br><br>
+                Очень скучаю, но знаю, что скоро будем вместе!<br>
+                Крепко-крепко целую, твоя Алиська! 💕💕
+            </div>
+        </div>
+        <button class="more-btn heart-btn-bottom" style="margin-top: 18px; margin-bottom: 18px;">ХОЧУ БОЛЬШЕ</button>
+    </div>
+
+    <!-- Модальное окно для видео -->
+    <div id="video-modal" class="video-modal" style="display: none;">
+      <div class="video-modal-backdrop"></div>
+      <div class="video-modal-content">
+        <button class="video-modal-close" title="Закрыть">×</button>
+        <div class="video-modal-iframe-wrapper">
+          <!-- Вставьте сюда ссылку на Google Drive видео -->
+          <iframe id="video-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
